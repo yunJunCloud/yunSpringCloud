@@ -4,9 +4,17 @@ import com.yunjun.cloudconsulpayment.service.PaymentService;
 import com.yunjun.cloudinterface.bean.CommonResult;
 import com.yunjun.cloudinterface.bean.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.flowable.engine.RuntimeService;
+import org.flowable.engine.TaskService;
+import org.flowable.engine.runtime.ProcessInstance;
+import org.flowable.task.api.Task;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * @ClassName PaymentController
@@ -26,6 +34,12 @@ public class PaymentController {
 	private final PaymentService paymentService;
 
 	private final  DiscoveryClient discoveryClient;
+
+	@Autowired
+	private RuntimeService runtimeService;
+
+	@Autowired
+	private TaskService taskService;
 
 	public PaymentController(PaymentService paymentService, DiscoveryClient discoveryClient) {
 		this.paymentService = paymentService;
@@ -53,5 +67,26 @@ public class PaymentController {
 			return new CommonResult(444, port+"没有查询记录", null);
 		}
 	}
+
+	/**
+	 * @author xiaofu
+	 * @description 启动流程
+	 * @date 2020/8/26 17:36
+	 */
+	@RequestMapping(value = "startLeaveProcess")
+	@ResponseBody
+	public String startLeaveProcess(String staffId) {
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("leaveTask", staffId);
+		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("Leave", map);
+		StringBuilder sb = new StringBuilder();
+		sb.append("创建请假流程 processId：" + processInstance.getId());
+		List<Task> tasks = taskService.createTaskQuery().taskAssignee(staffId).orderByTaskCreateTime().desc().list();
+		for (Task task : tasks) {
+			sb.append("任务taskId:" + task.getId());
+		}
+		return sb.toString();
+	}
+
 
 }
