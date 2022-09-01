@@ -1,9 +1,11 @@
 package com.yunjun.cloudconsumer.config;
 
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestOperations;
 
 /**
  * @ClassName ApplicationContextConfig
@@ -15,9 +17,21 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class ApplicationContextConfig {
 
+//	@Bean
+//	@LoadBalanced  //负载均衡
+//	public RestTemplate getRestTemplate(){
+//		return new RestTemplate();
+//	}
+
 	@Bean
 	@LoadBalanced  //负载均衡
-	public RestTemplate getRestTemplate(){
-		return new RestTemplate();
+	//建议用新版 RestOperations
+	public RestOperations getRestTemplate(RestTemplateBuilder builder){
+		return builder.build();
 	}
+
+//	@Bean
+//	public IRule myRule(){
+//		return new RandomRule();
+//	}
 }

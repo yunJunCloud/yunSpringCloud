@@ -66,7 +66,7 @@ public class PaymentController {
 		}
 
 		// 根据具体服务进一步获得该微服务的信息
-		List<ServiceInstance> instances = discoveryClient.getInstances("client1");
+		List<ServiceInstance> instances = discoveryClient.getInstances("client");
 		for (ServiceInstance instance : instances) {
 			log.info(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getPort()+"\t"+instance.getUri());
 		}

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -26,7 +27,8 @@ public class OrderController {
 	public final String PAYMENT_URL = "http://clientOne";
 
 	@Autowired
-	public RestTemplate restTemplate;
+//	public RestTemplate restTemplate;
+	private RestOperations restTemplate;
 
 	public OrderController() {
 	}
