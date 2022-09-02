@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/cloudConsulPayment/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudConsumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudEurekaServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudFeginConsumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudInterface/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudRedis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudServer/src/main/java" charset="UTF-8" />

@@ -10,6 +10,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName PaymentController
@@ -73,5 +74,21 @@ public class PaymentController {
 		return this.discoveryClient;
 	}
 
+	/**
+	 * 测试fegin 超时
+	 * @param id
+	 * @return
+	 */
+	@GetMapping(value = "/getTimeOut/{id}")
+	public CommonResult getPaymentTimeOut(@PathVariable("id") Long id) throws InterruptedException {
+		TimeUnit.SECONDS.sleep(10);
+		Payment payment = paymentService.selectById(id);
+		log.info("******插入结果：" + payment);
+		if (payment != null) {
+			return new CommonResult(200, port+"查询成功", payment);
+		} else {
+			return new CommonResult(444, port+"没有查询记录", null);
+		}
+	}
 
 }

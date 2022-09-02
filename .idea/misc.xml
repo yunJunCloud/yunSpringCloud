@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/cloudEurekaServer/pom.xml" />
         <option value="$PROJECT_DIR$/cloudConsumer/cloudClient2/pom.xml" />
         <option value="$PROJECT_DIR$/cloudConsulPayment/pom.xml" />
+        <option value="$PROJECT_DIR$/cloudFeginConsumer/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

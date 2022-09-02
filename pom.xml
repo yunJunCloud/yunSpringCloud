@@ -17,6 +17,7 @@
         <module>cloudConsumer</module>
         <module>cloudEurekaServer</module>
         <module>cloudConsulPayment</module>
+        <module>cloudFeginConsumer</module>
     </modules>
 
 <!--    <parent>-->

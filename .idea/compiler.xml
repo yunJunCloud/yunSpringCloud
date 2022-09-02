@@ -13,6 +13,7 @@
         <module name="cloudConsulPayment" />
         <module name="cloudClient" />
         <module name="cloudInterface" />
+        <module name="cloudFeginConsumer" />
         <module name="cloudRedis" />
         <module name="cloudConsumer" />
       </profile>
@@ -31,6 +32,7 @@
       <module name="cloudConsulPayment" options="" />
       <module name="cloudConsumer" options="" />
       <module name="cloudEurekaServer" options="" />
+      <module name="cloudFeginConsumer" options="" />
       <module name="cloudInterface" options="" />
       <module name="cloudRedis" options="" />
       <module name="cloudServer" options="" />

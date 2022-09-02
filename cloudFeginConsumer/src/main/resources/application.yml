@@ -1,0 +1,29 @@
+server:
+  port: 8099
+spring:
+  application:
+    name: openFeignCustomer
+
+eureka:
+  client:
+    register-with-eureka: true  #    表示是否将自己注册进EurekaServer，默认为true
+    fetch-registry: true  #    是否从EurekaServer抓取已有的注册信息，默认为true。单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡
+    service-url:
+      #defaultZone: http://localhost:7001/eureka #单机版
+      defaultZone: http://eurekaService7001.com:7001/eureka/,http://eurekaService7002.com:7002/eureka/
+
+#开启feign 日志
+logging:
+  level:
+    com:
+      yunjun: debug
+
+feign:
+  client:
+    config:
+      default:
+        #建立连接所用的时间，适用于网络状况正常的情况下，两端连接所需要的时间,
+        ConnectTimeOut: 200000
+        #指建立连接后从服务端读取到可用资源所用的时间,默认为1s
+        ReadTimeOut: 200000
+
