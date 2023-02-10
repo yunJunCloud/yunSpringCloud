@@ -15,6 +15,8 @@
         <option value="$PROJECT_DIR$/cloudConsumer/cloudClient2/pom.xml" />
         <option value="$PROJECT_DIR$/cloudConsulPayment/pom.xml" />
         <option value="$PROJECT_DIR$/cloudFeginConsumer/pom.xml" />
+        <option value="$PROJECT_DIR$/cloudGateWay/pom.xml" />
+        <option value="$PROJECT_DIR$/log-spring-boot-starter/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

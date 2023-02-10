@@ -11,4 +11,6 @@ import com.yunjun.cloudinterface.bean.Payment;
  * @Version 1.0
  **/
 public interface PaymentService extends BaseService<Payment> {
+	public String paymentServiceOk(Integer _id);
+	public String paymentServiceTimeOut(Integer _id);
 }

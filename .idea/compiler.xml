@@ -11,7 +11,9 @@
         <module name="cloudEurekaServer" />
         <module name="cloudClient2" />
         <module name="cloudConsulPayment" />
+        <module name="log-spring-boot-starter" />
         <module name="cloudClient" />
+        <module name="cloudGateWay" />
         <module name="cloudInterface" />
         <module name="cloudFeginConsumer" />
         <module name="cloudRedis" />
@@ -33,9 +35,11 @@
       <module name="cloudConsumer" options="" />
       <module name="cloudEurekaServer" options="" />
       <module name="cloudFeginConsumer" options="" />
+      <module name="cloudGateWay" options="-parameters" />
       <module name="cloudInterface" options="" />
       <module name="cloudRedis" options="" />
       <module name="cloudServer" options="" />
+      <module name="log-spring-boot-starter" options="-parameters" />
       <module name="provider-dept" options="-parameters" />
       <module name="server" options="-parameters" />
     </option>

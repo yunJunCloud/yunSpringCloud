@@ -69,4 +69,14 @@ public class PaymentController {
 		}
 	}
 
+	@GetMapping("/hystrix/testOk/{id}")
+	public CommonResult paymentServiceOk(@PathVariable("id") Integer id){
+		return new CommonResult(200,paymentService.paymentServiceOk(id));
+	}
+
+	@GetMapping("/hystrix/testTimeOut/{id}")
+	public CommonResult paymentServiceTimeOut(@PathVariable("id") Integer id){
+		return new CommonResult(200, paymentService.paymentServiceTimeOut(id));
+	}
+
 }
